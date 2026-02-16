@@ -1,5 +1,32 @@
 @import url('inputs.css');
+@import url('fonts.css');
+
+:root {
+    --c-primary: #ffc917;
+    --c-secondary: #0063d3;
+
+    --c-text: #003082
+}
 
 * {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+label,
+legend {
+    font-family: ns-demi, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--c-text);
+}
+
+h1 {
+    font-family: ns-bold;
+    color: var(--c-text);
+    background-color: var(--c-primary);
+    margin-top: 0;
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
 }
