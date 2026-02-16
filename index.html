@@ -11,8 +11,8 @@
         <h1>SCHOOLOPDRACHT - Erfbelastingsformulier</h1>
         <form>
             <fieldset>
-                <legend>1a</legend>
-                <!-- Voeg hiervoor nog ::before en ::after elementen toe aan de css -->
+                <legend>Vul hier de gegevens in van de overledene</legend>
+
                 <label class="initials-label" for="initials">Voorletter(s)</label>
 
                 <label class="prefixes-label" for="prefixes">tussenvoegel(s)</label>
@@ -35,10 +35,6 @@
                     Overlijdensdatum <!-- Je kunt niet in de toekomst overlijden.. Hiervoor JavaScript gebruiken En het moet recent zijn -->
                     <input id="dateOfDeath" name="dateOfDeath" type="date" />
                 </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>1b</legend>
 
                 <fieldset class="radio-buttons-question">
                     <legend>
@@ -67,7 +63,11 @@
                     <label>
                         <!-- Het is misschien nog een goede toevoeging om bestanden te kunnen laten uploaden Voeg een upload veld toe Hier of aan eht einde van formulier 1 -->
                         <input type="radio" name="conditions" value="true" />
-                        Ja. <em>Stuur een kopie van de akte mee met de aangifte.</em>
+                        Ja
+                    </label>
+                    <label>
+                        Stuur een kopie van de akte mee met de aangifte.
+                        <input type="file" name="notarial-deed"/>
                     </label>
                 </fieldset>
 
@@ -89,13 +89,9 @@
                     <!--Input-type="text" om het toevoegen van een datepicker niet UX-friendly is voor datums ver in de verleden tijd. -->
                     <!--Voeg automatisch streepjes toe aan de input met javascript-->
                     <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
-                    Datum huwelijkse of partnerschapsvoorwaarden
-                    <input class="text-date" placeholder="DD-MM-YYYY" type="number" pattern="\d{2}-\d{2}-\d{4}" />
+                    Datum huwelijkse of partnerschapsvoorwaarden (DD-MM-YYYY)
+                    <input class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" />
                 </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>1c</legend>
 
                 <fieldset class="radio-buttons-question">
                     <legend>
@@ -146,10 +142,6 @@
                         Ja
                     </label>
                 </fieldset>
-            </fieldset>
-
-            <fieldset>
-                <legend>1d</legend>
 
                 <fieldset class="radio-buttons-question">
                     <legend>
@@ -174,7 +166,8 @@
 
                         <label>
                             Protocolnummer notaris
-                            <input type="number" max="6" />
+                             <!--Voeg een eventlistener toe die alles behalve cijfers niet opslaat-->
+                            <input type="text" inputmode="numeric" maxlength="6" name="notary-protocolnumber" />
                         </label>
 
                         <!-- Bij voorletters met JavaScript automatisch puntjes toevoegen-->
@@ -193,6 +186,7 @@
                         <label>
                             Vestigingsplaats
                             <!-- Kijk of hier misschien nog een api aan gekoppeld kan worden voor plaatsnaam validatie -->
+                            <!-- Kijk ook of de eerste letter automatisch een hoofdletter kan worden -->
                             <input type="text" />
                         </label>
 
@@ -200,8 +194,8 @@
                             <!--Input-type="text" om het toevoegen van een datepicker niet UX-friendly is voor datums ver in de verleden tijd. -->
                             <!--Voeg automatisch streepjes toe aan de input met javascript-->
                             <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
-                            Datum van het testament of van de laatste wijziging
-                            <input class="text-date" placeholder="DD-MM-YYYY" type="number" pattern="\d{2}-\d{2}-\d{4}" />
+                            Datum van het testament of van de laatste wijziging (DD-MM-YYYY)
+                            <input class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" />
                         </label>
                     </fieldset>
                 </fieldset>
