@@ -1,3 +1,40 @@
 input {
     font-family: inherit;
+    height: 2rem;
+    border-radius: .5rem;
+    border: 2px solid var(--c-secondary);
+}
+
+label:has(input[type="text"]),
+label:has(input[type="date"]) {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: .25em;
+
+    > input {
+        margin-block: 0;
+    }
+
+    @media (min-width: 460px) {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+.radio-buttons {
+    margin-block: 0;
+    display: flex;
+    gap: 1rem;
+    
+    > label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .25rem;
+
+        > input {
+            margin-top: 0;
+        }
+    }
 }

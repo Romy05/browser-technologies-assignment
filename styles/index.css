@@ -3,9 +3,8 @@
 
 :root {
     --c-primary: #ffc917;
-    --c-secondary: #0063d3;
-
-    --c-text: #003082
+    --c-secondary-light: #0063d3;
+    --c-secondary: #003082
 }
 
 * {
@@ -13,6 +12,7 @@
 }
 
 body {
+    background: var(--c-secondary);
     font-family: ns-regular, Segoe UI, Myriad, Verdana, sans-serif;
     margin: 0;
 }
@@ -20,19 +20,88 @@ body {
 label,
 legend {
     font-family: ns-demi, Segoe UI, Myriad, Verdana, sans-serif;
-    color: var(--c-text);
+    color: var(--c-secondary);
 }
 
 h1 {
-    font-family: ns-bold, Segoe UI, Myriad, Verdana, sans-serif;
-    color: var(--c-text);
+    font-family: ns-regular, Segoe UI, Myriad, Verdana, sans-serif;
+    color: var(--c-secondary);
     background-color: var(--c-primary);
     margin-top: 0;
     padding: 1rem;
     border-radius: 0 0 1rem 1rem;
+    border-style: solid;
+    border-color: var(--c-secondary);
+    border-width: 3px;
+    border-top: none;
+    top: 0;
+    position: sticky;
+    font-size: 3.5vw;
+    z-index: 10;
 }
 
-.fullname {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+form {
+    background-color: white;
+    margin: auto;
+    padding-block: 1rem;
+    border-radius: 1rem;
+
+
+    @media (min-width: 600px) {
+        width: 80%;
+        border: 3px solid var(--c-secondary);
+        padding: 2rem;
+    }
+}
+
+label span{
+    @media (min-width: 460px) {
+        border-bottom: 2px solid var(--c-primary);
+    }
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    border-radius: 1rem;
+
+    .radio-buttons-question {
+        align-self: start;
+        align-items: start;
+        border: none;
+        margin-block: 0;
+
+        > legend {
+            border-bottom: 3px solid var(--c-primary);
+        }
+    }
+
+    > * {
+        margin-block: .5em;
+    }
+}
+
+.text-input-field {
+    display: flex;
+    gap: .5em;
+    flex-direction: column;
+    width: 75%;
+}
+
+#deceased-info-legend {
+    top: calc(3.5vw + 1rem + 1rem);
+    position: sticky;
+    z-index: 5;
+    transition: .1s linear;
+}
+
+#deceased-info-legend.is-pinned {
+    padding: .5rem;
+    width: 100%;
+    background: var(--c-secondary);
+    color: white;
+    border: 3px solid var(--c-primary);
+    border-radius: 0 0 1rem 1rem;
 }
