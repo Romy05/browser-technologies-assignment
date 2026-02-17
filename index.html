@@ -13,17 +13,19 @@
             <fieldset>
                 <legend>Vul hier de gegevens in van de overledene</legend>
 
-                <label class="initials-label" for="initials">Voorletter(s)</label>
+                <section class="fullname">
+                    <label class="initials-label" for="initials">Voorletter(s)</label>
 
-                <label class="prefixes-label" for="prefixes">tussenvoegel(s)</label>
+                    <input type="text" id="initials" />
 
-                <label class="surname-label" for="surname">achternaam</label>
+                    <label class="prefixes-label" for="prefixes">Tussenvoegel(s)</label>
+                    
+                    <input type="text" id="prefixes" />
+                    
+                    <label class="surname-label" for="surname">Achternaam</label>
 
-                <input type="text" id="initials" />
-
-                <input type="text" id="prefixes" />
-
-                <input type="text" id="surname" />
+                    <input type="text" id="surname" />
+                </section>
 
                 <label>
                     Bsn overledene
@@ -170,18 +172,19 @@
                             <input type="text" inputmode="numeric" maxlength="6" name="notary-protocolnumber" />
                         </label>
 
-                        <!-- Bij voorletters met JavaScript automatisch puntjes toevoegen-->
-                        <label class="initials-label" for="notary-initials">Voorletter(s)</label>
+                        <section class="fullname">
+                            <label class="initials-label" for="notary-initials">Voorletter(s)</label>
+                            
+                            <input type="text" id="notary-initials" />
 
-                        <label class="prefixes-label" for="notary-prefixes">tussenvoegel(s)</label>
+                            <label class="prefixes-label" for="notary-prefixes">Tussenvoegel(s)</label>
+                            
+                            <input type="text" id="notary-prefixes" />
 
-                        <label class="surname-label" for="notary-surname">achternaam</label>
+                            <label class="surname-label" for="notary-surname">Achternaam</label>
 
-                        <input type="text" id="notary-initials" />
-
-                        <input type="text" id="notary-prefixes" />
-
-                        <input type="text" id="notary-surname" />
+                            <input type="text" id="notary-surname" />
+                        </section>
 
                         <label>
                             Vestigingsplaats

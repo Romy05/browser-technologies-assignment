@@ -13,20 +13,26 @@
 }
 
 body {
+    font-family: ns-regular, Segoe UI, Myriad, Verdana, sans-serif;
     margin: 0;
 }
 
 label,
 legend {
-    font-family: ns-demi, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: ns-demi, Segoe UI, Myriad, Verdana, sans-serif;
     color: var(--c-text);
 }
 
 h1 {
-    font-family: ns-bold;
+    font-family: ns-bold, Segoe UI, Myriad, Verdana, sans-serif;
     color: var(--c-text);
     background-color: var(--c-primary);
     margin-top: 0;
     padding: 1rem;
     border-radius: 0 0 1rem 1rem;
+}
+
+.fullname {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

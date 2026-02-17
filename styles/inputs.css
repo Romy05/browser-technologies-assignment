@@ -1,7 +1,3 @@
-.initials-label::after {
-    content: ','
-}
-
-.prefixes-label::after {
-    content: ' en'
+input {
+    font-family: inherit;
 }
