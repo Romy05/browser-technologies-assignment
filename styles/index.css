@@ -91,7 +91,7 @@ fieldset {
 }
 
 #deceased-info-legend {
-    top: calc(3.5vw + 1rem + 1rem);
+    top: calc(3.5vw + 1.5rem + 1rem);
     position: sticky;
     z-index: 5;
     transition: .1s linear;
