@@ -17,6 +17,7 @@ Volgende keer wil ik de file input beter stylen en wil ik toevoegen dat sommige 
 Het formulier begint al ergens op te lijken.
 <img src="./public/images/progress2.png" />
 
-## Woensdag 18-2-2026 Checkout
-### CSS to the rescue
-Vandaag was de kick-off van het vak CSS to the rescue. Ik heb onderzoek gedaan naar carousels door middel van CSS en HTML. Met mijn groepje heb ik een website gemaakt waar verschillende carousels te zien zijn. Morgen is de bedoeling dat wij gaan presenteren wat wij te weten zijn gekomen over carousels.
+## Vrijdag 20-2-2026 Weekly review 
+Vandaag heb ik met Vasilis, Choice en Eva gekeken naar de voortgang van onze BT projecten. Hier heb ik uit gehaald dat het bijvoorbeeld beter is om divs te gebruiken in plaats van sections om mijn radio-buttons heen. Omdat ik deze container alleen om de divs heb gezet voor styling doeleinden.
+
+Verder wil ik na de vakantie nog kijken naar een oplossing voor mijn sticky positioned element. Nu heb ik deze gestyled met javascript. Maar ik wil graag weten of er een css oplossing voor is. Zelf ben ik hier nog niet op gekomen.

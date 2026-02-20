@@ -13,7 +13,7 @@
             <fieldset>
                 <legend id="deceased-info-legend">Vul hier de gegevens in van de overledene</legend>
 
-                <section class="text-input-field">
+                <div class="text-input-field">
                     <label class="initials-label" for="initials">
                         <span>Voorletter(s)</span>
                         <input type="text" id="initials" />
@@ -31,7 +31,7 @@
 
                     <label for="bsn">
                         <span>Bsn overledene</span>
-                        <!--Voeg een eventlistener toe die alles behalve cijfers niet opslaat-->
+                        
                         <input id="bsn" type="text" inputmode="numeric" maxlength="9" name="bsn" /> 
                     </label>
 
@@ -39,14 +39,14 @@
                         <span>Overlijdensdatum</span>
                         <input id="dateOfDeath" name="dateOfDeath" type="date" />
                     </label>
-                </section>
+                </div>
 
                 <fieldset class="radio-buttons-question">
                     <legend>
                         Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?
                     </legend>
 
-                    <section class="radio-buttons">
+                    <div class="radio-buttons">
                         <label>
                             <!--Nee? Ga verder naar 1C. Functionaliteit implementeren-->
                             <input type="radio" name="married" value="false" />
@@ -57,7 +57,7 @@
                             <input type="radio" name="married" value="true" />
                             Ja
                         </label>
-                    </section>
+                    </div>
                 </fieldset>
 
                 <fieldset class="radio-buttons-question">
@@ -65,7 +65,7 @@
                         Hadden de overledene en diens echtgenoot ofgeregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
                     </legend>
 
-                    <section class="radio-buttons">
+                    <div class="radio-buttons">
                         <label>
                             <!--Nee? Ga verder naar 1C. Functionaliteit implementeren-->
                             <input type="radio" name="conditions" value="false" />
@@ -77,7 +77,7 @@
                             <input type="radio" name="conditions" value="true" />
                             Ja
                         </label>
-                    </section>
+                    </div>
                     
                     <label>
                         Stuur een kopie van de akte mee met de aangifte.
@@ -90,7 +90,7 @@
                         Hadden de overledene en diens partner een finaal verrekenbeding?
                     </legend>
 
-                    <section class="radio-buttons">
+                    <div class="radio-buttons">
                         <label>
                             <input type="radio" name="settlement" value="false" />
                             Nee
@@ -100,7 +100,7 @@
                             <input type="radio" name="settlement" value="true" />
                             Ja
                         </label>
-                    </section>
+                    </div>
                 </fieldset>
 
                 <label>
@@ -116,7 +116,7 @@
                         Had de overledene kinderen?
                     </legend>
 
-                    <section class="radio-buttons">
+                    <div class="radio-buttons">
                         <label>
                             <!-- Als Nee -> Ga door naar vraag 1d-->
                             <input type="radio" name="hasChildren" value="false" />
@@ -127,7 +127,7 @@
                             <input type="radio" name="hasChildren" value="true" />
                             Ja
                         </label>
-                    </section>
+                    </div>
                 </fieldset>
 
                 <fieldset class="radio-buttons-question">
@@ -135,7 +135,7 @@
                         Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
                     </legend>
 
-                    <section class="radio-buttons">
+                    <div class="radio-buttons">
                         <label>
                             <!-- Als Nee -> Ga door naar vraag 1d-->
                             <input type="radio" name="hasDeceasedChild" value="false" />
@@ -146,7 +146,7 @@
                             <input type="radio" name="hasDeceasedChild" value="true" />
                             Ja
                         </label>
-                    </section>
+                    </div>
                 </fieldset>
 
                 <fieldset class="radio-buttons-question">
@@ -154,7 +154,7 @@
                         Had dit overleden kind zelf kinderen?
                     </legend>
 
-                    <section class="radio-buttons">
+                    <div class="radio-buttons">
                         <label>
                             <input type="radio" name="childHasChildren" value="false" />
                             Nee
@@ -164,7 +164,7 @@
                             <input type="radio" name="childHasChildren" value="true" />
                             Ja
                         </label>
-                    </section>
+                    </div>
                 </fieldset>
 
                 <fieldset class="radio-buttons-question">
@@ -172,7 +172,7 @@
                         Had de overledene een testament?
                     </legend>
                     
-                    <section class="radio-buttons">
+                    <div class="radio-buttons">
                         <label>
                             <!-- Als Nee -> Ga door naar vraag 2-->
                             <input type="radio" name="hasTestamony" value="false" />
@@ -183,14 +183,14 @@
                             <input type="radio" name="hasTestamony" value="true" />
                             Ja
                         </label>
-                    </section>
+                    </div>
                   
                     <fieldset>
                         <legend>
                             Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.
                         </legend>
 
-                        <section class="text-input-field">
+                        <div class="text-input-field">
                             <label for="notary-protocolnumber">
                                 Protocolnummer notaris
                                 <!--Voeg een eventlistener toe die alles behalve cijfers niet opslaat-->
@@ -227,7 +227,7 @@
                                 <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
                                 <input id="testamony-date" name="testamony-date" class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" />
                             </label>
-                        </section>
+                        </div>
                     </fieldset>
                 </fieldset>
             </fieldset>
