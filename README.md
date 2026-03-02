@@ -22,6 +22,14 @@ Vandaag heb ik met Vasilis, Choice en Eva gekeken naar de voortgang van onze BT 
 
 Verder wil ik na de vakantie nog kijken naar een oplossing voor mijn sticky positioned element. Nu heb ik deze gestyled met javascript. Maar ik wil graag weten of er een css oplossing voor is. Zelf ben ik hier nog niet op gekomen.
 
+
+## Maandag 2-3-2026 
+Ik heb een workshop over javascript validatie gevolgd. 
+Vandaag heb ik validation toegevoegd aan sommige velden. Hier ben ik 4 uur mee bezig geweest.
+<img src="./public/images/progress3.png" />
+Ook heb ik mij verdiept op de weekly geek van morgen. 
+
+Morgen wil ik er voor zorgen dat vragen zichtbaar worden als ze nodig zijn.
 Ideetjes:
 
 # Patterns 
