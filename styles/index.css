@@ -1,18 +1,13 @@
 @import url('inputs.css');
 @import url('fonts.css');
-
-:root {
-    --c-primary: #ffc917;
-    --c-secondary-light: #0063d3;
-    --c-secondary: #003082
-}
+@import url('colors.css');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: var(--c-secondary);
+    background: var(--nes-core-color-brand-blue);
     font-family: ns-regular, Segoe UI, Myriad, Verdana, sans-serif;
     margin: 0;
 }
@@ -20,18 +15,18 @@ body {
 label,
 legend {
     font-family: ns-demi, Segoe UI, Myriad, Verdana, sans-serif;
-    color: var(--c-secondary);
+    color: var(--nes-core-color-brand-blue);
 }
 
 h1 {
     font-family: ns-regular, Segoe UI, Myriad, Verdana, sans-serif;
-    color: var(--c-secondary);
-    background-color: var(--c-primary);
+    color: var(--nes-core-color-brand-blue);
+    background-color: var(--nes-core-color-brand-yellow);
     margin-top: 0;
     padding: 1rem;
     border-radius: 0 0 1rem 1rem;
     border-style: solid;
-    border-color: var(--c-secondary);
+    border-color: var(--nes-core-color-brand-blue);
     border-width: 3px;
     border-top: none;
     top: 0;
@@ -49,14 +44,8 @@ form {
 
     @media (min-width: 600px) {
         width: 80%;
-        border: 3px solid var(--c-secondary);
+        border: 3px solid var(--nes-core-color-brand-blue);
         padding: 2rem;
-    }
-}
-
-label span{
-    @media (min-width: 460px) {
-        border-bottom: 2px solid var(--c-primary);
     }
 }
 
@@ -68,13 +57,18 @@ fieldset {
     border-radius: 1rem;
 
     .radio-buttons-question {
-        align-self: start;
+        gap: .5em;
+        align-self: center;
         align-items: start;
-        border: none;
         margin-block: 0;
+        width: 80%;
+        border: none;
+        border-bottom: 2px solid var(--nes-core-color-brand-yellow);
+        border-radius: 0;
+        transition: 1s ease;
 
         > legend {
-            border-bottom: 3px solid var(--c-primary);
+            float: inline-start;
         }
     }
 
@@ -84,10 +78,21 @@ fieldset {
 }
 
 .text-input-field {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: .5em;
-    flex-direction: column;
-    width: 75%;
+    width: 80%;
+    padding-bottom: 2rem;
+    border: none;
+    border-bottom: 2px solid var(--nes-core-color-brand-yellow);
+
+    @media (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &:has(input:user-invalid) .alert-message {
+        display: block;
+    }
 }
 
 #deceased-info-legend {
@@ -100,8 +105,8 @@ fieldset {
 #deceased-info-legend.is-pinned {
     padding: .5rem;
     width: 100%;
-    background: var(--c-secondary);
+    background: var(--nes-core-color-brand-blue);
     color: white;
-    border: 3px solid var(--c-primary);
+    border: 3px solid var(--nes-core-color-brand-yellow);
     border-radius: 0 0 1rem 1rem;
 }

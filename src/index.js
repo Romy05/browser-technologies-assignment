@@ -4,15 +4,10 @@ initInputFields();
 initEventListeners();
 
 function initInputFields() {
-    const dateOfDeathField = document.querySelector('#dateOfDeath');
+    const dateOfDeathField = document.querySelector('#date-of-death');
     const today = new Date();
-    const minDate = new Date();
-    /* Je hebt 8 maanden om het erfbelastingsformulier in te vullen */
-    minDate.setMonth(today.getMonth() - 8);
-
-     /* toIsoString etc gedeelte van stackoverflow: https://stackoverflow.com/a/49916376 */
-    dateOfDeathField.max = today.toISOString().split("T")[0]; /* Hier zou ik een helper functie van kunnen maken */
-    dateOfDeathField.min = minDate.toISOString().split("T")[0];
+    /* toIsoString etc gedeelte van stackoverflow: https://stackoverflow.com/a/49916376 */
+    dateOfDeathField.max = today.toISOString().split("T")[0];
 
     const initialsInputs = document.querySelectorAll('[id*="initials"]');
 
@@ -32,18 +27,54 @@ function initEventListeners() {
     // Source - https://stackoverflow.com/a/74812383 en aangepast met behulp van ChatGPT
     // Mijn use case is net anders dan die op stackoverflow, omdat de top van mijn element niet 0 is.
     // Daarom gebruik ik een scroll-listener in plaats van een intersection observer.
-    const el = document.querySelector("#deceased-info-legend");
+    const infoLegend = document.querySelector("#deceased-info-legend");
 
     function checkPosition() {
-        const rect = el.getBoundingClientRect();
-        const stickyTop = parseFloat(getComputedStyle(el).top);
+        const rect = infoLegend.getBoundingClientRect();
+        const stickyTop = parseFloat(getComputedStyle(infoLegend).top);
 
         if (rect.top <= stickyTop) {
-            el.classList.add("is-pinned");
+            infoLegend.classList.add("is-pinned");
         } else {
-            el.classList.remove("is-pinned");
+            infoLegend.classList.remove("is-pinned");
         }
     }
 
     window.addEventListener("scroll", checkPosition);
+
+    initFormValidators();
+}
+
+function initFormValidators() {
+    const dateOfDeathField = document.querySelector("#date-of-death");
+    const bsnField = document.querySelector("#bsn");
+
+    function validateDeathDate(event) {
+        const deathDate = new Date(event.target.value);
+        /* Je hebt 8 maanden om het erfbelastingsformulier in te vullen */
+        const today = new Date();
+        const minDate = new Date();
+        minDate.setMonth(today.getMonth() - 8);
+        const inputSection = event.target.parentElement.parentElement;
+        const note = inputSection.querySelector('.note-message');
+        
+
+        if (deathDate < minDate) {
+            // Geef melding dat er rente betaalt moet worden.
+            note.style.display = 'block';
+            return;
+        } 
+        note.style.display = 'none';
+    }
+
+    function validateBSN(event) {
+        if (event.target.validity.patternMismatch === true) {
+            event.target.setCustomValidity('Het BSN bestaat uit 8 tot 9 cijfers.');
+            return;
+        }
+        event.target.setCustomValidity('');
+    }
+
+    bsnField.addEventListener('blur', validateBSN);
+    dateOfDeathField.addEventListener('blur', validateDeathDate);
 }

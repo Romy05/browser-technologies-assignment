@@ -15,8 +15,8 @@
 
                 <div class="text-input-field">
                     <label class="initials-label" for="initials">
-                        <span>Voorletter(s)</span>
-                        <input type="text" id="initials" />
+                        <span>Voorletter(s)*</span>
+                        <input type="text" id="initials" required />
                     </label>
 
                     <label class="prefixes-label" for="prefixes">
@@ -25,20 +25,23 @@
                     </label>
                     
                     <label class="surname-label" for="surname">
-                        <span>Achternaam</span>
-                        <input type="text" id="surname" />
+                        <span>Achternaam*</span>
+                        <input type="text" id="surname" required />
                     </label>
 
                     <label for="bsn">
-                        <span>Bsn overledene</span>
+                        <span>Bsn overledene*</span>
                         
-                        <input id="bsn" type="text" inputmode="numeric" maxlength="9" name="bsn" /> 
+                        <input id="bsn" type="text" pattern="\d{8,9}" inputmode="numeric" min-length="8" maxlength="9" name="bsn" required  /> 
                     </label>
 
-                    <label for="dateOfDeath">
-                        <span>Overlijdensdatum</span>
-                        <input id="dateOfDeath" name="dateOfDeath" type="date" />
+                    <label for="date-of-death">
+                        <span>Overlijdensdatum*</span>
+                        <input id="date-of-death" name="date-of-death" type="date" />
                     </label>
+
+                    <p class="alert-message">Het BSN bestaat uit 8 tot 9 cijfers.</p>
+                    <p class="note-message">Let op: Omdat u de aangifte meer dan 8 maanden na het overlijden indient, betaalt u belastingsrente.</p>
                 </div>
 
                 <fieldset class="radio-buttons-question">
@@ -101,15 +104,15 @@
                             Ja
                         </label>
                     </div>
-                </fieldset>
 
-                <label>
-                    <!--Input-type="text" om het toevoegen van een datepicker niet UX-friendly is voor datums ver in de verleden tijd. -->
-                    <!--Voeg automatisch streepjes toe aan de input met javascript-->
-                    <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
-                    Datum huwelijkse of partnerschapsvoorwaarden (DD-MM-YYYY)
-                    <input class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" />
-                </label>
+                    <label>
+                        <!--Input-type="text" om het toevoegen van een datepicker niet UX-friendly is voor datums ver in de verleden tijd. -->
+                        <!--Voeg automatisch streepjes toe aan de input met javascript-->
+                        <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
+                        Datum huwelijkse of partnerschapsvoorwaarden (DD-MM-YYYY)
+                        <input class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" />
+                    </label>
+                </fieldset>
 
                 <fieldset class="radio-buttons-question">
                     <legend>
