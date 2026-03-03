@@ -30,6 +30,34 @@ Vandaag heb ik validation toegevoegd aan sommige velden. Hier ben ik 4 uur mee b
 Ook heb ik mij verdiept op de weekly geek van morgen. 
 
 Morgen wil ik er voor zorgen dat vragen zichtbaar worden als ze nodig zijn.
+
+## Dinsdag 2-3-2026
+Wat heb je nodig voor het maken van een radio-button?
+
+### Styling 
+Voor de styling moet je before en after elementen gebruiken om het knopje te maken.
+
+### Werking
+Het moet bij elkaar in de groep zitten.
+Hetzelfde als checkbox, maar je moet er voor zorgen dat wanneer je een aanvinkt, dat de andere uit zijn. 
+En ze moeten door middel van pijltjes toetsen aangevinkt kunnen worden.
+
+### a11y
+Voor de label moet je een aria-labelledby gebruiken.
+Je moet tab-index toevoegen, zodat de browser ziet dat je er op kunt tabben.
+
+Wat heb je nodig voor het maken van een checkbox?
+
+### Styling 
+Voor de styling moet je before en after elementen gebruiken om het knopje te maken.
+
+### Werking
+Je moet een onclick en een onkeydown toevoegen zodat ze checkable zijn in JS.
+
+### a11y
+Div met daar in een label met een id. Voor de label moet je een aria-labelledby gebruiken.
+Je moet tab-index toevoegen, zodat de browser ziet dat je er op kunt tabben.
+
 Ideetjes:
 
 # Patterns 
