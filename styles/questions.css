@@ -1,0 +1,16 @@
+.radio-buttons-question.disabled,
+.disabled {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+    transform: scaleY(0);
+    transition: .5s ease;
+}
+
+.radio-buttons-question.extra-question {
+    width: 100%;
+    border: none;
+    padding: 0;
+}

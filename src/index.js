@@ -1,4 +1,5 @@
 import { seperateCharactersByDot } from "./helpers/string.js";
+import { initQuestionEventListeners } from "./helpers/questions.js";
 
 initInputFields();
 initEventListeners();
@@ -41,7 +42,7 @@ function initEventListeners() {
     }
 
     window.addEventListener("scroll", checkPosition);
-
+    initQuestionEventListeners();
     initFormValidators();
 }
 
