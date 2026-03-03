@@ -10,8 +10,6 @@ input {
     }  
 }
 
-
-
 label:has(input[type="text"]),
 label:has(input[type="date"]) {
     display: grid;
@@ -26,6 +24,23 @@ label:has(input[type="date"]) {
 
 
 }
+
+details {
+    display: flex;
+    align-self: center;
+    pointer-events: none; 
+    transition: .5s ease;
+
+    &.open {
+        
+    }
+
+    summary {
+        display: none;
+    }
+
+}
+
 
 .surname-label {
     @media (min-width: 600px) {

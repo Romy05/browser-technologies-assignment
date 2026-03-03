@@ -44,7 +44,7 @@
                     <p class="note-message">Let op: Omdat u de aangifte meer dan 8 maanden na het overlijden indient, betaalt u belastingsrente.</p>
                 </div>
 
-                <fieldset class="radio-buttons-question">
+                <fieldset id="married-question" class="radio-buttons-question">
                     <legend>
                         Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?
                     </legend>
@@ -63,30 +63,35 @@
                     </div>
                 </fieldset>
 
-                <fieldset class="radio-buttons-question">
-                    <legend>
-                        Hadden de overledene en diens echtgenoot ofgeregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
-                    </legend>
+                <details id="prenup-question">
+                    <summary>Details</summary>
+                    <fieldset  class="radio-buttons-question">
+                        <legend>
+                            Hadden de overledene en diens echtgenoot ofgeregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
+                        </legend>
 
-                    <div class="radio-buttons">
-                        <label>
-                            <!--Nee? Ga verder naar 1C. Functionaliteit implementeren-->
-                            <input type="radio" name="conditions" value="false" />
-                            Nee
-                        </label>
+                        <div class="radio-buttons">
+                            <label>
+                                <!--Nee? Ga verder naar 1C. Functionaliteit implementeren-->
+                                <input type="radio" name="conditions" value="false" />
+                                Nee
+                            </label>
 
+                            <label>
+                                <!-- Het is misschien nog een goede toevoeging om bestanden te kunnen laten uploaden Voeg een upload veld toe Hier of aan eht einde van formulier 1 -->
+                                <input type="radio" name="conditions" value="true" />
+                                Ja
+                            </label>
+                        </div>
+                        
                         <label>
-                            <!-- Het is misschien nog een goede toevoeging om bestanden te kunnen laten uploaden Voeg een upload veld toe Hier of aan eht einde van formulier 1 -->
-                            <input type="radio" name="conditions" value="true" />
-                            Ja
+                            Stuur een kopie van de akte mee met de aangifte.
+                            <input type="file" name="notarial-deed"/>
                         </label>
-                    </div>
-                    
-                    <label>
-                        Stuur een kopie van de akte mee met de aangifte.
-                        <input type="file" name="notarial-deed"/>
-                    </label>
-                </fieldset>
+                    </fieldset>
+                </details>
+
+                
 
                 <fieldset class="radio-buttons-question">
                     <legend>

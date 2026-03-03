@@ -41,8 +41,24 @@ function initEventListeners() {
     }
 
     window.addEventListener("scroll", checkPosition);
-
+    initQuestions();
     initFormValidators();
+}
+
+function initQuestions() {
+    const marriedQuestion = document.querySelector('#married-question');
+    const radioButtons = marriedQuestion.querySelector('.radio-buttons');
+
+    function toggleNext(event) {
+        const prenupQuestion = document.querySelector('#prenup-question');
+        if (event.target.name === "married") {
+            prenupQuestion.open = event.target.value == "true";
+        }
+        
+    }
+
+    //ChatGPT
+    radioButtons.addEventListener('change', toggleNext);
 }
 
 function initFormValidators() {
