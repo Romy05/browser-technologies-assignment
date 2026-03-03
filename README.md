@@ -32,29 +32,35 @@ Ook heb ik mij verdiept op de weekly geek van morgen.
 Morgen wil ik er voor zorgen dat vragen zichtbaar worden als ze nodig zijn.
 
 ## Dinsdag 2-3-2026
-Wat heb je nodig voor het maken van een radio-button?
+Vandaag heb ik een inklap functionaliteit toegevoegd aan mijn formulier. Hier ben ik zo'n 4 uur mee bezig geweest. Verder heb ik samen met mijn clubje nog onderzoek gedaan naar het maken van een radio-button en checkbox. 
 
-### Styling 
+Vandaag heb ik geleerd dat je niet kunt animeren met een element dat display: none heeft. Ook heb ik geleerd dat input elementen een default value hebben en dat je deze terug kan zetten met JavaScript.
+
+Volgende week wil ik meer velden valideren en de inklap functionaliteit nog finetunen. 
+
+### Wat heb je nodig voor het maken van een radio-button?
+
+#### Styling 
 Voor de styling moet je before en after elementen gebruiken om het knopje te maken.
 
-### Werking
+#### Werking
 Het moet bij elkaar in de groep zitten.
 Hetzelfde als checkbox, maar je moet er voor zorgen dat wanneer je een aanvinkt, dat de andere uit zijn. 
 En ze moeten door middel van pijltjes toetsen aangevinkt kunnen worden.
 
-### a11y
+#### a11y
 Voor de label moet je een aria-labelledby gebruiken.
 Je moet tab-index toevoegen, zodat de browser ziet dat je er op kunt tabben.
 
-Wat heb je nodig voor het maken van een checkbox?
+### Wat heb je nodig voor het maken van een checkbox?
 
-### Styling 
+#### Styling 
 Voor de styling moet je before en after elementen gebruiken om het knopje te maken.
 
-### Werking
+#### Werking
 Je moet een onclick en een onkeydown toevoegen zodat ze checkable zijn in JS.
 
-### a11y
+#### a11y
 Div met daar in een label met een id. Voor de label moet je een aria-labelledby gebruiken.
 Je moet tab-index toevoegen, zodat de browser ziet dat je er op kunt tabben.
 

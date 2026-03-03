@@ -14,3 +14,10 @@
     border: none;
     padding: 0;
 }
+
+#conditions-question {
+    &:has(input:user-invalid) .alert-message {
+        margin: 0;
+        display: block;
+    }
+}

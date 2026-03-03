@@ -1,5 +1,6 @@
 import { seperateCharactersByDot } from "./helpers/string.js";
 import { initQuestionEventListeners } from "./helpers/questions.js";
+import { checkForValidDateString } from "./helpers/date.js"
 
 initInputFields();
 initEventListeners();
@@ -49,6 +50,7 @@ function initEventListeners() {
 function initFormValidators() {
     const dateOfDeathField = document.querySelector("#date-of-death");
     const bsnField = document.querySelector("#bsn");
+    const dateFields = document.querySelectorAll('.text-date');
 
     function validateDeathDate(event) {
         const deathDate = new Date(event.target.value);
@@ -76,6 +78,22 @@ function initFormValidators() {
         event.target.setCustomValidity('');
     }
 
+    function validateDate(event) {
+        
+        if (event.target.validity.patternMismatch === true) {
+            event.target.setCustomValidity('Zorg er voor dat de datum volgens het gegeven format is. Voorbeeld: 31-12-1999');
+            return;
+        } if (!checkForValidDateString(event.target.value)) {
+            event.target.setCustomValidity('Deze datum is niet geldig');
+            return;
+        }
+        event.target.setCustomValidity('');
+        
+    }
+
+    dateFields.forEach(dateField => {
+        dateField.addEventListener('blur', validateDate);
+    })
     bsnField.addEventListener('blur', validateBSN);
     dateOfDeathField.addEventListener('blur', validateDeathDate);
 }
