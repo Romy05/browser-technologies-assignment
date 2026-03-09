@@ -36,7 +36,18 @@ Vandaag heb ik een inklap functionaliteit toegevoegd aan mijn formulier. Hier be
 
 Vandaag heb ik geleerd dat je niet kunt animeren met een element dat display: none heeft. Ook heb ik geleerd dat input elementen een default value hebben en dat je deze terug kan zetten met JavaScript.
 
-Volgende week wil ik meer velden valideren en de inklap functionaliteit nog finetunen. 
+Volgende week wil ik meer velden valideren en de inklap functionaliteit nog finetunen.
+
+## Vrijdag 5-3-2026 
+Vandaag heb ik met mijn groepje de voortgang besproken van mijn assignment en die van mijn groepsgenoten. Hierbij heb ik feedback gegeven aan klasgenoten en hebben zij ook de kans om mij feedback te geven. Een feedbackpunt wat ik bijvoorbeeld kreeg ging over de UX van de inputvelden voor de voor- en achternamen en het tussenvoegsel. Deze stonden op een bepaalde manier gepositioneerd, waardoor het niet lekker liep. 
+
+## Maandag 9-3-2026
+Om 9:30 hebben wij een gastspreker gehad genaamd Rijk van Zanten. Hij vertelde over hoe zijn afstudeerproject een internationale startup werd en hoe hij is geëmigreerd naar de Verenigde Staten.
+Vandaag heb ik een validatie workshop gevolgd van Victor. Hier heb ik meer geleerd over de toegankelijkheid van custom validatie en hoe ik dit kan toepassen. 
+
+Vandaag heb ik de styling van mijn formulier nog nagelopen en aangepast waar ik vond dat nodig. Ook heb ik feedback van mijn groepje verwerkt. Verder heb ik mijn validatie aangepast. Nu wil ik het laten zien per veld in plaats van per groep. Hierdoor moet ik wel mijn validatie opnieuw implementeren. Maar ik zou wel zeggen dat het gebruiksvriendelijker is dan de situatie ervoor. 
+
+Hier ben ik eigenlijk zo'n 4 uur mee bezig geweest.
 
 ### Wat heb je nodig voor het maken van een radio-button?
 

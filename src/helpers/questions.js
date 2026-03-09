@@ -3,19 +3,19 @@
 export function initQuestionEventListeners() {
     const marriedQuestion = document.querySelector('#married-question');
     const conditionsQuestion = document.querySelector('#conditions-question');
-    const notarialDeed = document.querySelector('#notarial-deed');
-    const settlementQuestion = document.querySelector('#settlement-question');
+    const conditionsExtraQuestion = document.querySelector('#conditions-extra-questions');
     const hasChildrenQuestion = document.querySelector('#has-children-question');
     const hasDeceasedChildQuestion = document.querySelector('#has-deceased-child-question');
     const childHasChildrenQuestion = document.querySelector('#child-has-children-question');
     const hasTestamonyQuestion = document.querySelector('#has-testamony-question');
+    const testamonyExtraQuestions = document.querySelector('#testamony-extra-questions');
 
     const disabledQuestions = [
         conditionsQuestion,
-        notarialDeed,
-        settlementQuestion,
+        conditionsExtraQuestion,
         hasDeceasedChildQuestion,
-        childHasChildrenQuestion
+        childHasChildrenQuestion,
+        testamonyExtraQuestions
     ]
     
     disabledQuestions.forEach(question => {
@@ -27,13 +27,23 @@ export function initQuestionEventListeners() {
     });
 
     conditionsQuestion.querySelector('.radio-buttons').addEventListener('change', (event) => {
-        toggleQuestion(event, notarialDeed);
-        toggleQuestion(event, settlementQuestion);
+        toggleQuestion(event, conditionsExtraQuestion);
+    });
+
+    hasChildrenQuestion.querySelector('.radio-buttons').addEventListener('change', (event) => {
+        toggleQuestion(event, hasDeceasedChildQuestion);
+    });
+
+    hasDeceasedChildQuestion.querySelector('.radio-buttons').addEventListener('change', (event) => {
+        toggleQuestion(event, childHasChildrenQuestion);
+    });
+
+    hasTestamonyQuestion.querySelector('.radio-buttons').addEventListener('change', (event) => {
+        toggleQuestion(event, testamonyExtraQuestions);
     });
 }
 
 function toggleQuestion(event, question) {
-    console.log(event.target.value, event.target.name)
     if (event.target.value == "true") {
         enableQuestion(question);
         return;
@@ -59,6 +69,10 @@ function disableQuestion(question) {
     // Zet de hoogte naar 0 pixels zodat hij geen ruimte inneemt.
     setTimeout(() => {
         question.style.height = '0px';
+
+        if (question.classList.contains('question-set')) {
+            question.style.padding = '0px';
+        }
     }, 250);
 }
 
@@ -70,5 +84,9 @@ function enableQuestion(question) {
     inputs.forEach(input => {
         input.disabled = false;
     });
+  
     question.style.height = 'fit-content';
+    if (question.classList.contains('question-set')) {
+        question.style.padding = '1rem';
+    }
 }

@@ -1,4 +1,5 @@
 .radio-buttons-question.disabled,
+.question-set.disabled,
 .disabled {
     position: relative;
     overflow: hidden;

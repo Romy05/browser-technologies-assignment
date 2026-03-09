@@ -36,12 +36,15 @@ h1 {
     z-index: 10;
 }
 
+legend {
+    line-height: 1.2;
+}
+
 form {
     background-color: white;
     margin: auto;
     padding-block: 1rem;
     border-radius: 1rem;
-
 
     @media (min-width: 600px) {
         width: 80%;
@@ -61,13 +64,16 @@ fieldset {
         align-self: center;
         align-items: start;
         margin-block: 0;
-        width: 80%;
-        border: none;
-        border-bottom: 2px solid var(--nes-core-color-brand-yellow);
+        width: 90%;
+        border: 2px var(--nes-core-color-brand-yellow);
+        border-style: hidden dashed solid dashed;
         border-radius: 0;
-        transform-origin: top;
-        transform: scaleY(1);
-        transition: .5s ease;
+
+        .radio-buttons-question {
+            width: 100%;
+            border: none;
+            border-top: 2px solid var(--nes-core-color-brand-blue);
+        }
 
         > legend {
             float: inline-start;
@@ -75,7 +81,7 @@ fieldset {
     }
 
     > * {
-        margin-block: .5em;
+        margin-block-start: .5em;
     }
 }
 
@@ -83,18 +89,72 @@ fieldset {
     display: grid;
     grid-template-columns: 1fr;
     gap: .5em;
-    width: 80%;
+    width: 90%;
     padding-bottom: 2rem;
+    margin-bottom: 0;
     border: none;
     border-bottom: 2px solid var(--nes-core-color-brand-yellow);
 
-    @media (min-width: 600px) {
-        grid-template-columns: 1fr 1fr;
-    }
+    @media (min-width: 1199px) {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+            
+        .input-container,
+        label {
+            width: 100%;
+            grid-column: span 3;
+        }
 
+        .input-container:has(.initials-label) {
+            grid-column: span 1;
+        }
+
+        .prefixes-label {
+            grid-column: span 2;
+        }
+
+        .input-container:has(label[for="testamony-date"]) {
+            grid-column: span 6;
+        }
+
+        > * {
+            min-width: 0;
+        }
+    }
+    
     &:has(input:user-invalid) .alert-message {
         display: block;
     }
+}
+
+.question-set {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    border: 2px var(--nes-core-color-brand-blue);
+    border-style: dashed hidden;
+}
+
+fieldset.question-set {
+    border-radius: 0;
+
+    legend {
+        float: left;
+    }
+
+    .text-input-field {
+        padding-bottom: 0;
+        border: none;
+    }
+}
+
+.radio-buttons-question,
+.question-set {
+    transform-origin: top;
+    transform: scaleY(1);
+    transition: .5s ease;
 }
 
 #deceased-info-legend {

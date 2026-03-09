@@ -8,55 +8,73 @@
         <link rel="icon" href="public/images/skull.png" />
     </head>
     <body>
-        <h1>Schoolopdracht - Erfbelastingsformulier</h1>
+        <h1>Erfbelastingsformulier schoolopdracht</h1>
         <form>
             <fieldset>
                 <legend id="deceased-info-legend">Vul hier de gegevens in van de overledene</legend>
 
                 <div class="text-input-field">
-                    <label class="initials-label" for="initials">
-                        <span>Voorletter(s)*</span>
-                        <input type="text" id="initials" required />
-                    </label>
+                    <div class="input-container">
+                        <label class="initials-label" for="initials">
+                            <span>Voorletter(s)*</span>
 
+                            <input type="text" id="initials" required />
+
+                            <span class="error-message active"> Dit veld is verplicht </span>
+                        </label>
+                    </div>
+                    
                     <label class="prefixes-label" for="prefixes">
                         <span>Tussenvoegel(s)</span>
                         <input type="text" id="prefixes" />
                     </label>
                     
-                    <label class="surname-label" for="surname">
-                        <span>Achternaam*</span>
-                        <input type="text" id="surname" required />
-                    </label>
+                    <div class="input-container">
+                        <label class="surname-label" for="surname">
+                            <span>Achternaam*</span>
 
-                    <label for="bsn">
-                        <span>Bsn overledene*</span>
+                            <input type="text" id="surname" required />
+
+                            <span class="error-message active"> Dit veld is verplicht </span>
+                        </label>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="bsn">
+                            <span>Bsn overledene*</span>
                         
-                        <input id="bsn" type="text" pattern="\d{8,9}" inputmode="numeric" min-length="8" maxlength="9" name="bsn" required  /> 
-                    </label>
+                            <input id="bsn" type="text" pattern="\d{8,9}" inputmode="numeric" min-length="8" maxlength="9" name="bsn" required  /> 
+                            
+                            <span class="error-message active"> Dit veld is verplicht </span>
+                        </label>
+                    </div>
 
-                    <label for="date-of-death">
-                        <span>Overlijdensdatum*</span>
-                        <input id="date-of-death" name="date-of-death" type="date" />
-                    </label>
+                    <div class="input-container">
+                        <label for="date-of-death">
+                            <span>Overlijdensdatum*</span>
 
-                    <p class="alert-message">Het BSN bestaat uit 8 tot 9 cijfers.</p>
+                            <input id="date-of-death" name="date-of-death" type="date" required />
+
+                            <span class="error-message active"> Dit veld is verplicht </span>
+                        </label>
+                    </div>
+
                     <p class="note-message">Let op: Omdat u de aangifte meer dan 8 maanden na het overlijden indient, betaalt u belastingsrente.</p>
                 </div>
 
                 <fieldset id="married-question" class="radio-buttons-question">
                     <legend>
-                        Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?
+                        Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?*
                     </legend>
 
                     <div class="radio-buttons">
                         <label>
-                            <input type="radio" name="married" value="false" />
+                            <input type="radio" name="married" value="false" required />
                             Nee
                         </label>
 
                         <label>
-                            <input type="radio" name="married" value="true" />
+                            <input type="radio" name="married" value="true" required />
                             Ja
                         </label>
                     </div>
@@ -69,63 +87,75 @@
 
                     <div class="radio-buttons">
                         <label>
-                            <!--Nee? Ga verder naar 1C. Functionaliteit implementeren-->
-                            <input type="radio" name="conditions" value="false" />
+                            <input type="radio" name="conditions" value="false" required />
                             Nee
                         </label>
 
                         <label>
-                            <!-- Het is misschien nog een goede toevoeging om bestanden te kunnen laten uploaden Voeg een upload veld toe Hier of aan eht einde van formulier 1 -->
-                            <input type="radio" name="conditions" value="true" />
+                            <input type="radio" name="conditions" value="true" required />
                             Ja
                         </label>
                     </div>
-                    <label class="extra-question" id="notarial-deed">
-                        Stuur een kopie van de akte mee met de aangifte.
-                        <input type="file" name="notarial-deed"/>
-                    </label>
-                    <fieldset id="settlement-question" class="extra-question radio-buttons-question">
-                        <legend>
-                            Hadden de overledene en diens partner een finaal verrekenbeding?
-                        </legend>
+                    
+                    <div id="conditions-extra-questions" class="extra-question question-set">
+                        <div class="input-container">
+                            <label id="notarial-deed">
+                                Stuur een kopie van de akte mee met de aangifte.*
 
-                        <div class="radio-buttons">
-                            <label>
-                                <input type="radio" name="settlement" value="false" />
-                                Nee
-                            </label>
+                                <input type="file" name="notarial-deed" required />
 
-                            <label>
-                                <input type="radio" name="settlement" value="true" />
-                                Ja
+                                <span class="error-message active"> Stuur een (geldig) bestand mee! </span>
                             </label>
                         </div>
+                        
+                        <fieldset id="settlement-question" class="radio-buttons-question">
+                            <legend>
+                                Hadden de overledene en diens partner een finaal verrekenbeding?*
+                            </legend>
 
-                        <label>
-                            <!--Input-type="text" om het toevoegen van een datepicker niet UX-friendly is voor datums ver in de verleden tijd. -->
-                            <!--Voeg automatisch streepjes toe aan de input met javascript-->
-                            <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
-                            Datum huwelijkse of partnerschapsvoorwaarden (DD-MM-YYYY)
-                            <input class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" />
-                        </label>
-                    </fieldset>
-                    <p class="alert-message">Deze datum is niet geldig!</p>
+                            <div class="radio-buttons">
+                                <label>
+                                    <input type="radio" name="settlement" value="false" required />
+                                    Nee
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="settlement" value="true" required />
+                                    Ja
+                                </label>
+                            </div>
+
+                            <div class="input-container">
+                                <label>
+                                    <!--Input-type="text" om het toevoegen van een datepicker minder UX-friendly is voor datums ver in de verleden tijd. 
+                                    En ik wilde dit proberen hihi-->
+                                    <!--Voeg automatisch streepjes toe aan de input met javascript-->
+                                    <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
+                                    Datum huwelijkse of partnerschapsvoorwaarden (DD-MM-YYYY)*
+
+                                    <input class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" required />
+
+                                    <span class="error-message active"> Vul een geldige datum in </span>
+                                </label>
+                            </div>
+                            
+                        </fieldset>
+                    </div>  
                 </fieldset>
 
                 <fieldset id="has-children-question" class="radio-buttons-question">
                     <legend>
-                        Had de overledene kinderen?
+                        Had de overledene kinderen?*
                     </legend>
 
                     <div class="radio-buttons">
                         <label>
-                            <!-- Als Nee -> Ga door naar vraag 1d-->
-                            <input type="radio" name="hasChildren" value="false" />
+                            <input type="radio" name="hasChildren" value="false" required />
                             Nee
                         </label>
 
                         <label>
-                            <input type="radio" name="hasChildren" value="true" />
+                            <input type="radio" name="hasChildren" value="true" required />
                             Ja
                         </label>
                     </div>
@@ -133,18 +163,17 @@
 
                 <fieldset id="has-deceased-child-question" class="radio-buttons-question">
                     <legend>
-                        Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                        Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?*
                     </legend>
 
                     <div class="radio-buttons">
                         <label>
-                            <!-- Als Nee -> Ga door naar vraag 1d-->
-                            <input type="radio" name="hasDeceasedChild" value="false" />
+                            <input type="radio" name="hasDeceasedChild" value="false" required />
                             Nee
                         </label>
 
                         <label>
-                            <input type="radio" name="hasDeceasedChild" value="true" />
+                            <input type="radio" name="hasDeceasedChild" value="true" required />
                             Ja
                         </label>
                     </div>
@@ -152,17 +181,17 @@
 
                 <fieldset id="child-has-children-question" class="radio-buttons-question">
                     <legend>
-                        Had dit overleden kind zelf kinderen?
+                        Had dit overleden kind zelf kinderen?*
                     </legend>
 
                     <div class="radio-buttons">
                         <label>
-                            <input type="radio" name="childHasChildren" value="false" />
+                            <input type="radio" name="childHasChildren" value="false" required />
                             Nee
                         </label>
 
                         <label>
-                            <input type="radio" name="childHasChildren" value="true" />
+                            <input type="radio" name="childHasChildren" value="true" required />
                             Ja
                         </label>
                     </div>
@@ -170,66 +199,89 @@
 
                 <fieldset id="has-testamony-question" class="radio-buttons-question">
                     <legend>
-                        Had de overledene een testament?
+                        Had de overledene een testament?*
                     </legend>
                     
                     <div class="radio-buttons">
                         <label>
-                            <!-- Als Nee -> Ga door naar vraag 2-->
-                            <input type="radio" name="hasTestamony" value="false" />
+                            <input type="radio" name="hasTestamony" value="false" required />
                             Nee
                         </label>
 
                         <label>
-                            <input type="radio" name="hasTestamony" value="true" />
+                            <input type="radio" name="hasTestamony" value="true" required />
                             Ja
                         </label>
                     </div>
-                </fieldset>
-                <fieldset>
+
+                    <fieldset id="testamony-extra-questions" class="question-set">
                         <legend>
                             Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.
                         </legend>
 
-                        <div class="text-input-field">
-                            <label for="notary-protocolnumber">
-                                Protocolnummer notaris
-                                <!--Voeg een eventlistener toe die alles behalve cijfers niet opslaat-->
-                                <input id="notary-protocolnumber" type="text" inputmode="numeric" maxlength="6" name="notary-protocolnumber" />
-                            </label>
-                            
-                            <label class="initials-label" for="notary-initials">
-                                Voorletter(s)
-                                <input type="text" id="notary-initials" />
-                            </label>
+                        <div class="text-input-field">  
+                            <div class="input-container">
+                                <label class="initials-label" for="notary-initials">
+                                    Voorletter(s)*
+                                    <input type="text" id="notary-initials" required />
+
+                                    <span class="error-message active"> Dit veld is verplicht </span>
+                                </label>
+                            </div>
 
                             <label class="prefixes-label" for="notary-prefixes">
                                 Tussenvoegel(s)
                                 <input type="text" id="notary-prefixes" />
                             </label>
 
-                            <label class="surname-label" for="notary-surname">
-                                Achternaam
-                                <input type="text" id="notary-surname" />
-                            </label>
+                            <div class="input-container">
+                                <label class="surname-label" for="notary-surname">
+                                    Achternaam*
 
-                            <label>
-                                Vestigingsplaats
-                                <!-- Kijk of hier misschien nog een api aan gekoppeld kan worden voor plaatsnaam validatie -->
-                                <!-- Kijk ook of de eerste letter automatisch een hoofdletter kan worden -->
-                                <!-- Doe dit met een datalist -->
-                                <input id="notary-city" name="notary-city" type="text" />
-                            </label>
-                            
-                            <label for="testamony-date">
-                                Datum van het testament of van de laatste wijziging (DD-MM-YYYY)
-                                <!--Input-type="text" om het toevoegen van een datepicker niet UX-friendly is voor datums ver in de verleden tijd. -->
-                                <!--Voeg automatisch streepjes toe aan de input met javascript-->
-                                <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
-                                <input id="testamony-date" name="testamony-date" class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" />
-                            </label>
+                                    <input type="text" id="notary-surname" required />
+
+                                    <span class="error-message active"> Dit veld is verplicht </span>
+                                </label>
+                            </div>
+
+                             <div class="input-container">
+                                <label for="notary-protocolnumber">
+                                    Protocolnummer notaris*
+
+                                    <!--Voeg een eventlistener toe die alles behalve cijfers niet opslaat-->
+                                    <input id="notary-protocolnumber" type="text" inputmode="numeric" maxlength="6" name="notary-protocolnumber" required />
+
+                                    <span class="error-message active"> Dit veld is verplicht </span>
+                                </label>
+                            </div>
+
+                            <div class="input-container">
+                                <label>
+                                    Vestigingsplaats*
+                                    <!-- Kijk of hier misschien nog een api aan gekoppeld kan worden voor plaatsnaam validatie -->
+                                    <!-- Kijk ook of de eerste letter automatisch een hoofdletter kan worden -->
+                                    <!-- Doe dit met een datalist -->
+                                    <input id="notary-city" name="notary-city" type="text" required />
+
+                                    <span class="error-message active"> Dit veld is verplicht </span>
+                                </label>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="testamony-date">
+                                    Datum van het testament of van de laatste wijziging (DD-MM-YYYY)*
+                                    <!--Input-type="text" om het toevoegen van een datepicker niet UX-friendly is voor datums ver in de verleden tijd. -->
+                                    <!--Voeg automatisch streepjes toe aan de input met javascript-->
+                                    <!-- Het pattern komt van https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2 -->
+                                    <input id="testamony-date" name="testamony-date" class="text-date" type="text" pattern="\d{2}-\d{2}-\d{4}" required/>
+
+                                    <span class="error-message active"> Vul een geldige datum in </span>
+                                </label>
+                            </div>
                         </div>
                     </fieldset>
+                </fieldset>
+                <button>Submit</button>
             </fieldset>
         </form>
     </body>

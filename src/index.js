@@ -1,6 +1,7 @@
 import { seperateCharactersByDot } from "./helpers/string.js";
 import { initQuestionEventListeners } from "./helpers/questions.js";
-import { checkForValidDateString } from "./helpers/date.js"
+import { checkForValidDateString } from "./helpers/date.js";
+import {} from "./helpers/validation.js";
 
 initInputFields();
 initEventListeners();
@@ -58,10 +59,9 @@ function initFormValidators() {
         const today = new Date();
         const minDate = new Date();
         minDate.setMonth(today.getMonth() - 8);
-        const inputSection = event.target.parentElement.parentElement;
+        const inputSection = event.target.parentElement.parentElement.parentElement;
         const note = inputSection.querySelector('.note-message');
         
-
         if (deathDate < minDate) {
             // Geef melding dat er rente betaalt moet worden.
             note.style.display = 'block';
