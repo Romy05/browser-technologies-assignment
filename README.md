@@ -47,7 +47,7 @@ Vandaag heb ik een validatie workshop gevolgd van Victor. Hier heb ik meer gelee
 
 Vandaag heb ik de styling van mijn formulier nog nagelopen en aangepast waar ik vond dat nodig. Ook heb ik feedback van mijn groepje verwerkt. Verder heb ik mijn validatie aangepast. Nu wil ik het laten zien per veld in plaats van per groep. Hierdoor moet ik wel mijn validatie opnieuw implementeren. Maar ik zou wel zeggen dat het gebruiksvriendelijker is dan de situatie ervoor. 
 
-Hier ben ik eigenlijk zo'n 4 uur mee bezig geweest.
+Hier ben ik eigenlijk zo'n 4 uur mee bezig geweest. Morgen wil ik de validatie compleet maken en de tweede vraag toevoegen. Hier wil ik dus ook mijn tweede pattern voor implementeren -> progress bar en/of een stappen bar.
 
 ### Wat heb je nodig voor het maken van een radio-button?
 
