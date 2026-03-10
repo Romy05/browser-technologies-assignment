@@ -312,57 +312,45 @@
                 </fieldset>
 
                 <fieldset id="page-2">
-                    <legend id="authorized-info-legend">Vul hier de gegevens in van de overledene</legend>
+                    <legend id="authorized-info-legend">Vul hier de gegevens in van de gemachtigde</legend>
 
-                    <div class="text-input-field">
+                    <fieldset>
+                        <legend>Vul 1 van de 3 in: </legend>
+
                         <div class="input-container">
-                            <label class="initials-label" for="initials">
-                                <span>Voorletter(s)*</span>
+                            <label for="authorized-bsn-RSIN">
+                                <span>Bsn/RSIN gemachtigde</span>
 
-                                <input type="text" id="initials" required />
+                                <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="8" maxlength="9" id="authorized-bsn-RSIN" required />
 
-                                <span id="error-deceased-initials" class="error-message"> Dit veld is verplicht </span>
-                            </label>
-                        </div>
-                        
-                        <label class="prefixes-label" for="prefixes">
-                            <span>Tussenvoegel(s)</span>
-                            <input type="text" id="prefixes" />
-                        </label>
-                        
-                        <div class="input-container">
-                            <label class="surname-label" for="surname">
-                                <span>Achternaam*</span>
-
-                                <input type="text" id="surname" required />
-
-                                <span class="error-message" id="deceased-surname-error"> Dit veld is verplicht </span>
+                                <span id="error-authorized-bsn-RSIN-initials" class="error-message"> Dit veld is verplicht </span>
                             </label>
                         </div>
 
                         <div class="input-container">
-                            <label for="bsn">
-                                <span>Bsn overledene*</span>
+                            <label for="beconnumber-advisor">
+                                <span>Beconnummer adviseur</span>
+
+                                <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="6" maxlength="6" id="beconnumber-advisor" required />
+
+                                <span id="error-beconnumber-advisor" class="error-message"> Dit veld is verplicht </span>
                             
-                                <input id="bsn" type="text" pattern="\d{8,9}" inputmode="numeric" min-length="8" maxlength="9" name="bsn" required  /> 
-                                
-                                <span class="error-message" id="bsn-error"> Vul een geldig BSN in </span>
                             </label>
                         </div>
 
                         <div class="input-container">
-                            <label class="date-label" for="date-of-death">
-                                <span>Overlijdensdatum*</span>
+                            <label for="protocolnumber-notary">
+                                <span>Protocolnummer notaris</span>
 
-                                <input id="date-of-death" name="date-of-death" type="date" required />
+                                <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="6" maxlength="6" id="protocolnumber-notary" required />
 
-                                <span class="error-message" id="date-of-death-error"> Vul een geldige datum in </span>
+                                <span id="error-protocolnumber-notary" class="error-message"> Dit veld is verplicht </span>
+                            
                             </label>
                         </div>
 
-                        <p class="note-message">Let op: Omdat u de aangifte meer dan 8 maanden na het overlijden indient, betaalt u belastingsrente.</p>
-                    </div>
-                    
+                    </fieldset>
+                
                     <div class="navigation-links-container">
                         <a href="#page-1" class="navigation-link previous" >Vorige</a>
                         <a href="#page-3" class="navigation-link next" >Volgende</a>
