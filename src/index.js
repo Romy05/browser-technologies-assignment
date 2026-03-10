@@ -26,23 +26,6 @@ function initInputFields() {
 }
 
 function initEventListeners() {
-    // Source - https://stackoverflow.com/a/74812383 en aangepast met behulp van ChatGPT
-    // Mijn use case is net anders dan die op stackoverflow, omdat de top van mijn element niet 0 is.
-    // Daarom gebruik ik een scroll-listener in plaats van een intersection observer.
-    const infoLegend = document.querySelector("#deceased-info-legend");
-
-    function checkPosition() {
-        const rect = infoLegend.getBoundingClientRect();
-        const stickyTop = parseFloat(getComputedStyle(infoLegend).top);
-
-        if (rect.top <= stickyTop) {
-            infoLegend.classList.add("is-pinned");
-        } else {
-            infoLegend.classList.remove("is-pinned");
-        }
-    }
-
-    window.addEventListener("scroll", checkPosition);
     initQuestionEventListeners();
     setValidators();
 }

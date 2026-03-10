@@ -71,9 +71,9 @@ label:has(input[type="date"]) {
         .error-message {
             display: none;
         }
-        /* Ik zou zeggen, bij elementen die alleen required hebben, deze alleen bij een submit checken en niet blur.
-        Bij elementen met bijzondere patterns zoals BSN of datum kan dit wel bij blur. */
-        .error-message.active {
+
+        .error-message.active,
+        &:has(input:user-invalid) .error-message {
             display: block;
             font-size: small;
             border: 2px solid var(--nes-core-color-brand-blue);
@@ -84,9 +84,32 @@ label:has(input[type="date"]) {
             color: var(--nes-core-color-neutral-black);
         }
 
-        &:has(.error-message.active) input {
+        &:has(.error-message.active) input,
+        &:has(input:user-invalid) input {
+            border: 2px solid var(--nes-core-color-brand-blue);
             border-bottom: 1px solid var(--nes-core-color-red-500);
             border-radius: .25rem .25rem 0 0;
+        }
+    }
+}
+
+.radio-buttons {
+    .error-message {
+        display: none;
+    }
+
+    .error-message.active,
+    &:has(input:user-invalid) .error-message {
+        display: flex;
+        gap: .25rem;
+        align-items: center;
+        font-weight: 600;
+        color: var(--nes-core-color-red-500);
+
+        &::before {
+            
+            content: url('../public/icons/error-icon.svg');
+            
         }
     }
 }

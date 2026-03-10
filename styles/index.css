@@ -30,10 +30,7 @@ h1 {
     border-color: var(--nes-core-color-brand-blue);
     border-width: 3px;
     border-top: none;
-    top: 0;
-    position: sticky;
     font-size: 3.5vw;
-    z-index: 10;
 }
 
 legend {
@@ -85,6 +82,23 @@ fieldset {
     }
 }
 
+.pages-container {
+    &::-webkit-scrollbar { 
+        display: none; 
+    }
+    
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: auto;
+
+    > * {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+}
+
 .text-input-field {
     display: grid;
     grid-template-columns: 1fr;
@@ -132,6 +146,7 @@ fieldset {
     gap: 1rem;
     width: 100%;
     margin: auto;
+    padding: 1rem;
     align-items: center;
     border: 2px var(--nes-core-color-brand-blue);
     border-style: dashed hidden;
@@ -150,6 +165,37 @@ fieldset.question-set {
     }
 }
 
+.navigation-links-container {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    width: 100%;
+
+    &:not(:has(.next)) {
+        justify-content: flex-start;
+    }
+
+    &:not(:has(.previous)) {
+        justify-content: flex-end;
+    }
+}
+
+.navigation-link {
+    display: inline-block;
+    line-height: 1.2rem;
+    border: 2px solid var(--nes-core-color-blue-600);
+    border-radius: .25rem;
+    background-color: var(--nes-core-color-blue-600);
+    color: white;
+    font-weight: 650;
+    text-decoration: none;
+    padding: .5rem;
+
+    &:hover {
+        background-color: var(--nes-core-color-blue-700);
+    }
+}
+
 .radio-buttons-question,
 .question-set {
     transform-origin: top;
@@ -158,8 +204,8 @@ fieldset.question-set {
 }
 
 #deceased-info-legend {
-    top: calc(3.5vw + 1.5rem + 1rem);
     position: sticky;
+    top: 0;
     z-index: 5;
     transition: .1s linear;
 }

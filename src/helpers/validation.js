@@ -1,43 +1,40 @@
 import { checkForValidDateString } from "./date.js";
 
+/* Ik zou zeggen, bij elementen die alleen required hebben, deze alleen bij een submit checken en niet blur.
+Bij elementen met bijzondere patterns zoals BSN of datum kan dit wel bij blur. */
+
 export function setValidators() {
     // Zet browser validation uit
     const form = document.querySelector('form');
     form.setAttribute('novalidate', '');
 
     const dateOfDeathField = document.querySelector("#date-of-death");
-    const bsnField = document.querySelector("#bsn");
-    const dateFields = document.querySelectorAll('.text-date');
-    const initialsLabels = document.querySelectorAll(".initials-label");
+    const dateLabels = document.querySelectorAll('.date-label-text');
 
-
-    initialsLabels.forEach(label => {
-        const input = label.querySelector("input");
-        const error = label.querySelector(".error-message");
-
-        const errorId = error.getAttribute('id');
-
-        input.addEventListener('blur', (event) => {
-            if(!input.validity.valid) {
-                error.classList.add('active');
-                input.setAttribute('aria-describedby', errorId);
-            } else {
-                error.classList.remove('active');
-                input.removeAttribute('aria-describedby');
-            }
-        })
+    dateLabels.forEach(dateField => {
+        dateField.addEventListener('blur', validateDateText(dateField));
     })
-
-
-
-    dateFields.forEach(dateField => {
-        dateField.addEventListener('blur', validateDate);
-    })
-    bsnField.addEventListener('blur', validateBSN);
     dateOfDeathField.addEventListener('blur', validateDeathDate);
+
+    form.addEventListener('submit', (event) => {
+        const focusedInput = form.querySelector('label:has(.error-message.active) input, label input:user-invalid');
+        event.preventDefault();
+        focusedInput.focus();
+    })
 }
 
 function validateDeathDate(event) {
+    const errorMsg = event.target.nextElementSibling;
+
+    if(!event.target.value) {
+        errorMsg.classList.add('active');
+        event.target.setAttribute('aria-describedby', errorMsg.getAttribute('id'));
+        return;
+    } else {
+        errorMsg.classList.remove('active');
+        event.target.removeAttribute('aria-describedby');
+    }
+
     const deathDate = new Date(event.target.value);
     /* Je hebt 8 maanden om het erfbelastingsformulier in te vullen */
     const today = new Date();
@@ -54,22 +51,21 @@ function validateDeathDate(event) {
     note.style.display = 'none';
 }
 
-function validateBSN(event) {
-    if (event.target.validity.patternMismatch === true) {
-        event.target.setCustomValidity('Het BSN bestaat uit 8 tot 9 cijfers.');
-        return;
-    }
-    event.target.setCustomValidity('');
-}
+function validateDateText(label) {
+    const input = label.querySelector("input");
+    const error = label.querySelector(".error-message");
 
-function validateDate(event) {
-    
-    if (event.target.validity.patternMismatch === true) {
-        event.target.setCustomValidity('Zorg er voor dat de datum volgens het gegeven format is. Voorbeeld: 31-12-1999');
-        return;
-    } if (!checkForValidDateString(event.target.value)) {
-        event.target.setCustomValidity('Deze datum is niet geldig');
-        return;
-    }
-    event.target.setCustomValidity('');
-}
+    const errorId = error.getAttribute('id');
+
+    console.log(input, error, errorId)
+
+    input.addEventListener('blur', () => {
+        if((!input.validity.valid) || (!checkForValidDateString(input.value))) {
+            error.classList.add('active');
+            input.setAttribute('aria-describedby', errorId);
+        } else {
+            error.classList.remove('active');
+            input.removeAttribute('aria-describedby');
+        }
+    })
+}   
