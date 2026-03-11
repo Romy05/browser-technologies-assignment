@@ -8,6 +8,10 @@ input {
         border-color: var(--nes-core-color-red-500);
         outline: var(--nes-core-color-red-500);
     }  
+
+    &:disabled {
+        background: var(--nes-core-color-gray-300);
+    }
 }
 
 input[type="file"] {

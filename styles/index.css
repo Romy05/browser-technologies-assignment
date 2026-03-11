@@ -86,7 +86,7 @@ fieldset {
     &::-webkit-scrollbar { 
         display: none; 
     }
-    
+
     display: flex;
     width: 100%;
     overflow-x: scroll;
@@ -201,6 +201,20 @@ fieldset.question-set {
     transform-origin: top;
     transform: scaleY(1);
     transition: .5s ease;
+}
+
+.authorized-info-fieldset-container {
+    display: grid;
+    width: 100%;
+    grid-template-areas: "bsn name name";
+
+    fieldset:has(#authorized-bsn-RSIN) {
+        grid-area: bsn;
+    }
+
+    fieldset:has(#authorized-initials) {
+        grid-area: name;
+    }
 }
 
 #deceased-info-legend {

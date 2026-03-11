@@ -314,42 +314,82 @@
                 <fieldset id="page-2">
                     <legend id="authorized-info-legend">Vul hier de gegevens in van de gemachtigde</legend>
 
-                    <fieldset>
-                        <legend>Vul 1 van de 3 in: </legend>
+                    <div class="authorized-info-fieldset-container">
+                        <fieldset class="optional-but-one-required">
+                            <legend>Vul 1 van de 3 in: </legend>
 
-                        <div class="input-container">
-                            <label for="authorized-bsn-RSIN">
-                                <span>Bsn/RSIN gemachtigde</span>
+                            <div class="input-container">
+                                <label for="authorized-bsn-RSIN">
+                                    <span>Bsn/RSIN gemachtigde</span>
 
-                                <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="8" maxlength="9" id="authorized-bsn-RSIN" required />
+                                    <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="8" maxlength="9" id="authorized-bsn-RSIN" required />
 
-                                <span id="error-authorized-bsn-RSIN-initials" class="error-message"> Dit veld is verplicht </span>
-                            </label>
-                        </div>
+                                    <span id="error-authorized-bsn-RSIN-initials" class="error-message"> Vul een geldige BSN/RSIN in </span>
+                                </label>
+                            </div>
 
-                        <div class="input-container">
-                            <label for="beconnumber-advisor">
-                                <span>Beconnummer adviseur</span>
+                            <div class="input-container">
+                                <label for="beconnumber-advisor">
+                                    <span>Beconnummer adviseur</span>
 
-                                <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="6" maxlength="6" id="beconnumber-advisor" required />
+                                    <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="6" maxlength="6" id="beconnumber-advisor" required />
 
-                                <span id="error-beconnumber-advisor" class="error-message"> Dit veld is verplicht </span>
+                                    <span id="error-beconnumber-advisor" class="error-message"> Vul een geldig nummer in </span>
+                                
+                                </label>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="protocolnumber-notary">
+                                    <span>Protocolnummer notaris</span>
+
+                                    <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="6" maxlength="6" id="protocolnumber-notary" required />
+
+                                    <span id="error-protocolnumber-notary" class="error-message"> Vul een geldig nummer in </span>
+                                
+                                </label>
+                            </div>
+
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="input-container">
+                                <label class="initials-label" for="authorized-initials">
+                                    <span>Voorletter(s)*</span>
+
+                                    <input type="text" id="authorized-initials" required />
+
+                                    <span id="error-authorized-initials" class="error-message"> Dit veld is verplicht </span>
+                                </label>
+                            </div>
                             
+                            <label class="prefixes-label" for="authorized-prefixes">
+                                <span>Tussenvoegel(s)</span>
+                                <input type="text" id="authorized-prefixes" />
                             </label>
-                        </div>
-
-                        <div class="input-container">
-                            <label for="protocolnumber-notary">
-                                <span>Protocolnummer notaris</span>
-
-                                <input type="text" pattern="\d{8,9}" inputmode="numeric" min-length="6" maxlength="6" id="protocolnumber-notary" required />
-
-                                <span id="error-protocolnumber-notary" class="error-message"> Dit veld is verplicht </span>
                             
-                            </label>
-                        </div>
+                            <div class="input-container">
+                                <label class="surname-label" for="authorized-surname">
+                                    <span>Achternaam*</span>
 
-                    </fieldset>
+                                    <input type="text" id="authorized-surname" required />
+
+                                    <span class="error-message" id="authorized-surname-error"> Dit veld is verplicht </span>
+                                </label>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="establishment">
+                                    <span>Naam instelling*</span>
+                                
+                                    <input id="establishment" type="text" name="bsn" required  /> 
+                                    
+                                    <span class="error-message" id="establishment-error"> Vul een geldig BSN in </span>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
                 
                     <div class="navigation-links-container">
                         <a href="#page-1" class="navigation-link previous" >Vorige</a>

@@ -49,6 +49,11 @@ Vandaag heb ik de styling van mijn formulier nog nagelopen en aangepast waar ik 
 
 Hier ben ik eigenlijk zo'n 4 uur mee bezig geweest. Morgen wil ik de validatie compleet maken en de tweede vraag toevoegen. Hier wil ik dus ook mijn tweede pattern voor implementeren -> progress bar en/of een stappen bar.
 
+## Dinsdag 10-3-2026
+Vanmorgen hebben wij de weekly geek besproken. Ik vond het punt van de maker van het filmpje erg duidelijk en ik was het er ook mee eens. Sommige elementen moeten bepaalde kenmerken houden zodat het voor een gebruiker duidelijk is wat zij doen.
+
+Verder heb ik vandaag een tweede pagina toegevoegd en overal validation toegevoegd. Volgende keer wil ik mijn tweede pattern implementeren, en de ingevulde gegevens weergeven in het laatste scherm. 
+
 ### Wat heb je nodig voor het maken van een radio-button?
 
 #### Styling 
