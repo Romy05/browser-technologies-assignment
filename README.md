@@ -54,35 +54,12 @@ Vanmorgen hebben wij de weekly geek besproken. Ik vond het punt van de maker van
 
 Verder heb ik vandaag een tweede pagina toegevoegd en overal validation toegevoegd. Volgende keer wil ik mijn tweede pattern implementeren, en de ingevulde gegevens weergeven in het laatste scherm. 
 
-### Wat heb je nodig voor het maken van een radio-button?
+## Vrijdag 13-3-2026
+Met mijn groepje hebben we elkaars ontwerpen bekeken en feedback gegeven. Ik wil volgende week aan de volgende punten werken:
 
-#### Styling 
-Voor de styling moet je before en after elementen gebruiken om het knopje te maken.
-
-#### Werking
-Het moet bij elkaar in de groep zitten.
-Hetzelfde als checkbox, maar je moet er voor zorgen dat wanneer je een aanvinkt, dat de andere uit zijn. 
-En ze moeten door middel van pijltjes toetsen aangevinkt kunnen worden.
-
-#### a11y
-Voor de label moet je een aria-labelledby gebruiken.
-Je moet tab-index toevoegen, zodat de browser ziet dat je er op kunt tabben.
-
-### Wat heb je nodig voor het maken van een checkbox?
-
-#### Styling 
-Voor de styling moet je before en after elementen gebruiken om het knopje te maken.
-
-#### Werking
-Je moet een onclick en een onkeydown toevoegen zodat ze checkable zijn in JS.
-
-#### a11y
-Div met daar in een label met een id. Voor de label moet je een aria-labelledby gebruiken.
-Je moet tab-index toevoegen, zodat de browser ziet dat je er op kunt tabben.
-
-Ideetjes:
-
-# Patterns 
-    -> progressiebalk
-    -> Extra informatie weergeven voor iedere vraag
-    -> 
+- Ik wil mijn website toegankelijker maken, door mijn validatie met aria-describedby, aria-live en javascript te implementeren.
+- Ik wil mijn website meer op de NS website laten lijken door hun stijl meer over te nemen.
+- Ik wil meer begeleidende en informatieve tekst toevoegen aan mijn form.
+- Ik wil meer onderzoek doen naar mijn 2e pattern en dit op een begeleidende manier implementeren.
+- Zorgen dat na de "volgende" of "vorige" knop dat het tabbable is. (niet naar de volgende elementen tabben)
+- Zorgen dat er verschil zit in de knoppen en denken aan de positionering van de knoppen op mijn pagina.
