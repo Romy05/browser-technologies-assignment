@@ -1,8 +1,11 @@
-input {
+input,
+select {
     font-family: inherit;
-    height: 2rem;
+    line-height: 1.5rem;
+    padding-block: .25rem;
+    padding-inline: .5rem;
     border-radius: .25rem;
-    border: 2px solid var(--nes-core-color-brand-blue);
+    border: 1px solid var(--nes-core-color-gray-400);
 
     &:user-invalid {
         border-color: var(--nes-core-color-red-500);
@@ -15,32 +18,40 @@ input {
 }
 
 input[type="file"] {
-   
-    margin-top: 1rem;
     line-height: 2rem;
 
     &::file-selector-button {
-        height: 2rem;
+        height: 1.5rem;
         background-color: var(--nes-core-color-brand-blue);
         border: none;
         color: white;
         font-weight: 550;
         cursor: pointer;
     }
+
+    &:hover {
+        &::file-selector-button {
+            background-color: var(--nes-core-color-blue-800);
+        }
+    }
 }
 
 label:has(input[type="file"]) {
     width: 100%;
     display: flex;
+    gap: .25rem;
     flex-direction: column;
 
     transition: .25s ease;
 }
 
+select,
 label:has(input[type="text"]),
+label:has(input[type="email"]),
 label:has(input[type="date"]) {
     display: flex;
     flex-direction: column;
+    gap: .25rem;
 
     > input {
         margin-block: 0;
@@ -74,45 +85,104 @@ label:has(input[type="date"]) {
     label {
         .error-message {
             display: none;
+            
+            &::before {
+                width: 1.25rem;
+                height: 1.25rem;
+                content: '';
+                background-image: url(../public/icons/error-icon.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
         }
 
         .error-message.active,
         &:has(input:user-invalid) .error-message {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: .25rem;
             font-size: small;
-            border: 2px solid var(--nes-core-color-brand-blue);
-            border-top: 1px solid var(--nes-core-color-red-500);
-            border-radius: 0 0 .25rem .25rem;
-            padding-block: .25rem;
             text-align: center;
-            color: var(--nes-core-color-neutral-black);
+
+            color: var(--error-message-color);
         }
 
         &:has(.error-message.active) input,
         &:has(input:user-invalid) input {
-            border: 2px solid var(--nes-core-color-brand-blue);
-            border-bottom: 1px solid var(--nes-core-color-red-500);
-            border-radius: .25rem .25rem 0 0;
+            border: 1px solid var(--nes-core-color-red-500);
         }
     }
 }
 
 .radio-buttons {
+    padding-block: .5rem;
+
     .error-message {
         display: none;
     }
 
     .error-message.active,
     &:has(input:user-invalid) .error-message {
-        display: flex;
-        gap: .25rem;
+         display: flex;
         align-items: center;
+        justify-content: start;
+        gap: .25rem;
+        font-size: small;
         font-weight: 600;
-        color: var(--nes-core-color-red-500);
+        text-align: center;
 
-        &::before {
-            
-            content: url('../public/icons/error-icon.svg');
+        color: var(--error-message-color);
+
+        &::before { 
+            width: 1.25rem;
+            height: 1.25rem;
+            content: '';
+            background-image: url(../public/icons/error-icon.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    label:has(span.custom-radio) {
+        display: block;
+        padding-inline-start: 1.5rem;
+        position: relative;
+        cursor: pointer;
+        color: var(--nes-core-color-gray-950);
+        font-size: 0.875rem;
+        font-weight: 550;
+        
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            &:checked ~ .custom-radio {
+                background-image: radial-gradient(
+                    #FFF 30%, 
+                    var(--radio-button-background-color) 0 100%
+                );
+            }
+
+            &:focus ~ .custom-radio {
+                outline: 2px solid #0062d1;
+                outline-offset: 1px;
+            }
+        }
+
+        .custom-radio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 100%;
+            border: 1px solid var(--nes-core-color-gray-950);
+            background-color: #FFF;
+
             
         }
     }

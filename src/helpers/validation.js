@@ -57,8 +57,6 @@ function validateDateText(label) {
 
     const errorId = error.getAttribute('id');
 
-    console.log(input, error, errorId)
-
     input.addEventListener('blur', () => {
         if((!input.validity.valid) || (!checkForValidDateString(input.value))) {
             error.classList.add('active');

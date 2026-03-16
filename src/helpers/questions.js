@@ -9,7 +9,6 @@ export function initQuestionEventListeners() {
     const childHasChildrenQuestion = document.querySelector('#child-has-children-question');
     const hasTestamonyQuestion = document.querySelector('#has-testamony-question');
     const testamonyExtraQuestions = document.querySelector('#testamony-extra-questions');
-    const oneRequiredFieldsets = document.querySelectorAll('.optional-but-one-required');
 
     const disabledQuestions = [
         conditionsQuestion,
@@ -18,28 +17,6 @@ export function initQuestionEventListeners() {
         childHasChildrenQuestion,
         testamonyExtraQuestions
     ]
-
-    oneRequiredFieldsets.forEach( fieldset =>{
-        fieldset.addEventListener('input', () => {
-            let oneHasValue = false;
-            const inputs = fieldset.querySelectorAll('input');
-
-            inputs.forEach(input => {
-                if (input.value) {
-                    oneHasValue = true;
-                }
-            });
-
-            inputs.forEach(input => {
-                console.log(input, oneHasValue, input.value, input.disabled)
-                if (oneHasValue && !input.value) {
-                    input.disabled = true;
-                } else {
-                    input.disabled = false;
-                }
-            });
-        })
-    })
     
     disabledQuestions.forEach(question => {
         disableQuestion(question);
@@ -92,10 +69,6 @@ function disableQuestion(question) {
     // Zet de hoogte naar 0 pixels zodat hij geen ruimte inneemt.
     setTimeout(() => {
         question.style.height = '0px';
-
-        if (question.classList.contains('question-set')) {
-            question.style.padding = '0px';
-        }
     }, 250);
 }
 
@@ -109,7 +82,4 @@ function enableQuestion(question) {
     });
   
     question.style.height = 'fit-content';
-    if (question.classList.contains('question-set')) {
-        question.style.padding = '1rem';
-    }
 }

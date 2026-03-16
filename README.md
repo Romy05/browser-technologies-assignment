@@ -63,3 +63,8 @@ Met mijn groepje hebben we elkaars ontwerpen bekeken en feedback gegeven. Ik wil
 - Ik wil meer onderzoek doen naar mijn 2e pattern en dit op een begeleidende manier implementeren.
 - Zorgen dat na de "volgende" of "vorige" knop dat het tabbable is. (niet naar de volgende elementen tabben)
 - Zorgen dat er verschil zit in de knoppen en denken aan de positionering van de knoppen op mijn pagina.
+
+## Maandag 16-3-2026
+Ik ben vandaag begonnen met het implementeren van het tweede pattern. Het is bijna af. Ik moet alleen nog de javascript enhancement toevoegen. Verder ben ik ook begonnen met het updaten van mijn componenten naar de NS huisstijl. Hier ben ik de hele dag mee bezig geweest.
+
+Morgen wil ik het tweede pattern afhebben en de javascript en CSS validatie helemaal goed doen. Als dat af is heb ik daarna nog tijd voor de extra ux/layout dingen die ik bij vorige week vrijdag heb opgesomd. 

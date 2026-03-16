@@ -105,6 +105,8 @@
     --nes-core-color-neutral-black: #000;
     --nes-core-color-brand-green: #00c690;
     --nes-core-color-brand-light-blue: #0063d3;
-    --nes-core-color-brand-blue: #003082;
+    --nes-core-color-brand-blue: #0a3680;
     --nes-core-color-brand-yellow: #ffc917;
+    --radio-button-background-color: #3e7f67;
+    --error-message-color: #ce092d;
 }
