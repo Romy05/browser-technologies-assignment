@@ -15,6 +15,35 @@ select {
     &:disabled {
         background: var(--nes-core-color-gray-300);
     }
+
+    &:focus {
+        outline: 2px solid var(--input-focus-state);
+    }
+}
+
+label:has(select) {
+    display: grid;
+    gap: .25rem;
+}
+
+select {
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 2.2rem;
+    /*https://utilitybend.com/blog/the-customizable-select-part-one-history-trickery-and-styling-the-select-with-css*/
+    @supports (appearance: base-select) {
+        &,
+        &::picker(select) {
+            appearance: base-select;
+        }
+
+        &::picker-icon {
+            position: absolute;
+            right: 10px;
+        }
+    }
 }
 
 input[type="file"] {
@@ -60,6 +89,12 @@ label:has(input[type="date"]) {
     * {
         min-width: 0;
     }
+}
+
+span.info-message {
+    color: #00010d8c;
+    font-size: 0.875rem;
+    font-weight: unset;
 }
 
 .radio-buttons {
@@ -168,7 +203,7 @@ label:has(input[type="date"]) {
             }
 
             &:focus ~ .custom-radio {
-                outline: 2px solid #0062d1;
+                outline: 2px solid var(--input-focus-state);
                 outline-offset: 1px;
             }
         }

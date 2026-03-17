@@ -1,6 +1,7 @@
 import { seperateCharactersByDot } from "./helpers/string.js";
 import { initQuestionEventListeners } from "./helpers/questions.js";
 import { setValidators } from "./helpers/validation.js";
+import { printResultOnChange } from "./helpers/result.js";
 
 initInputFields();
 initEventListeners();
@@ -23,9 +24,39 @@ function initInputFields() {
             event.target.value = seperateCharactersByDot(string)
         })
     })
+
+    /* Dit stuk door chatGPT laten genereren https://chatgpt.com/s/t_69b9bec15edc81919014aeb130fe73b9 */
+    document.querySelectorAll('.navigation-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').replace('#', '');
+            setActivePage(targetId);
+        });
+    });
+
+    setActivePage('page-1');
 }
 
 function initEventListeners() {
     initQuestionEventListeners();
     setValidators();
+    printResultOnChange();
+}
+
+ /* Dit stuk door chatGPT laten genereren https://chatgpt.com/s/t_69b9bec15edc81919014aeb130fe73b9 */
+function setActivePage(id) {
+    const pages = document.querySelectorAll('.pages-container > *');
+
+    if (id == 'page-3') {
+        pages.forEach(page => {
+            page.removeAttribute('inert');
+        });
+        return;
+    }
+    pages.forEach(page => {
+        if (page.id === id) {
+            page.removeAttribute('inert');
+        } else {
+            page.setAttribute('inert', '');
+        }
+    });
 }

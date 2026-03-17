@@ -68,3 +68,6 @@ Met mijn groepje hebben we elkaars ontwerpen bekeken en feedback gegeven. Ik wil
 Ik ben vandaag begonnen met het implementeren van het tweede pattern. Het is bijna af. Ik moet alleen nog de javascript enhancement toevoegen. Verder ben ik ook begonnen met het updaten van mijn componenten naar de NS huisstijl. Hier ben ik de hele dag mee bezig geweest.
 
 Morgen wil ik het tweede pattern afhebben en de javascript en CSS validatie helemaal goed doen. Als dat af is heb ik daarna nog tijd voor de extra ux/layout dingen die ik bij vorige week vrijdag heb opgesomd. 
+
+## Dinsdag 17-3-2026
+Vandaag heb ik de style aangepast zodat het meer op de NS style lijkt. Verder heb ik er voor gezorgd dat alle validatie ook door screenreaders wordt opgepakt. Verder heb ik nog andere dingen afgerond, zoals het laten zien van de data en het verzenden van het formulier.

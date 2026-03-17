@@ -8,13 +8,14 @@
 }
 
 body {
-    background: #e6e6e9;
+    background: var(--nes-core-color-gray-25);
     font-family: ns-regular, Segoe UI, Myriad, Verdana, sans-serif;
     margin: 0;
 }
 
 label,
-legend {
+legend,
+dt {
     font-family: ns-demi, Segoe UI, Myriad, Verdana, sans-serif;
     color: var(--nes-core-color-brand-blue);
     font-size: 1rem;
@@ -27,7 +28,9 @@ h1 {
     margin: 0;
     padding-block: 1rem;
     margin-block-end: 2rem;
-    box-shadow: .5rem;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.08),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
     font-size: 3.5vw;
     display: flex;
     align-items: center;
@@ -51,11 +54,14 @@ form {
     background-color: white;
     margin: auto;
     padding-block: 1rem;
-    border-radius: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.08),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.08);
 
     @media (min-width: 600px) {
         width: 80%;
-        border: 3px solid var(--nes-core-color-brand-blue);
+        
         padding: 2rem;
     }
 }
@@ -64,20 +70,22 @@ fieldset {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.04), 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
 
     legend {
         float: inline-start;
         font-size: 1.5rem;
-        padding-block: 1rem;
+        padding-block: .5rem;
+        border-bottom: .25rem solid var(--nes-core-color-brand-yellow);
     }
 
     .radio-buttons-question {
         gap: .5em;
         align-self: center;
         align-items: start;
-        padding-inline: 0;
         width: 90%;
-        border: none;
 
         .radio-buttons-question {
             width: 100%;
@@ -87,6 +95,7 @@ fieldset {
         legend {
             font-size: unset;
             padding-block: unset;
+            border: none;
         }
 
         .radio-buttons {
@@ -196,16 +205,13 @@ fieldset.question-set {
 
 .navigation-links-container {
     display: flex;
+    gap: .5rem;
     padding: 1rem;
-    justify-content: space-between;
     width: 100%;
+    justify-content: flex-start;
 
-    &:not(:has(.next)) {
-        justify-content: flex-start;
-    }
-
-    &:not(:has(.previous)) {
-        justify-content: flex-end;
+    a {
+        width: fit-content;
     }
 }
 
@@ -220,8 +226,17 @@ fieldset.question-set {
     text-decoration: none;
     padding: .5rem;
 
+    &.previous {
+        color: var(--nes-core-color-blue-600);
+        background-color: white;
+    }
+
     &:hover {
         background-color: var(--nes-core-color-blue-700);
+
+        &.previous {
+            background-color: var(--nes-core-color-gray-50);
+        }
     }
 }
 
@@ -232,83 +247,80 @@ fieldset.question-set {
     transition: .5s ease;
 }
 
-
-
-
 /* Styling van exclusief pagina 2 */
 
 .authorized-info-fieldset-container {
     display: grid;
     gap: 1rem;
-    max-width: 100%;
+    align-items: start;  
 
-    @media (min-width: 1000px) {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+    .question-set {
+        display: grid;
+        gap: .5rem;
+        max-width: 100%;
+        padding-inline: 0;
+        margin-top: 1rem;
 
-        grid-template-areas: 
-        "radio radio radio radio radio radio"
-        "bsn bsn bsn bsn bsn bsn"
-        "initials initials prefixes lastname lastname lastname"
-        "organization organization organization country country country"
-        "zip zip zip zip housenumber addon"
-        "street street street city city city"
-        "phone phone phone phone phone phone"
-        "email email email email email email";
+        @media (min-width: 1000px) {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            align-items: start;
 
-        > :has(.radio-buttons) {
-            grid-area: radio;
-        }
+            grid-template-areas: 
+            "initials initials prefixes lastname lastname lastname"
+            "organization organization organization country country country"
+            "zip zip zip zip housenumber addon"
+            "street street street city city city"
+            "phone phone phone phone phone phone"
+            "email email email email email email";
 
-        > :has(#bsn-becon-protocol) {
-            grid-area: bsn;
-        }
+            > :has(#authorized-initials) {
+                grid-area: initials;
+            }
 
-        > :has(#authorized-initials) {
-            grid-area: initials;
-        }
+            > :has(#authorized-prefixes) {
+                grid-area: prefixes;
+            }
 
-        > :has(#authorized-prefixes) {
-            grid-area: prefixes;
-        }
+            > :has(#authorized-surname) {
+                grid-area: lastname;
+            }
 
-        > :has(#authorized-surname) {
-            grid-area: lastname;
-        }
+            > :has(#establishment) {
+                grid-area: organization;
+            }
 
-        > :has(#establishment) {
-            grid-area: organization;
-        }
+            > :has(#landcode) {
+                grid-area: country;
+            }
 
-        > :has(#landcode) {
-            grid-area: country;
-        }
+            > :has(#zip) {
+                grid-area: zip;
+            }
 
-        > :has(#zip) {
-            grid-area: zip;
-        }
+            > :has(#house-number) {
+                grid-area: housenumber;
+            }
 
-        > :has(#house-number) {
-            grid-area: housenumber;
-        }
+            > :has(#add-on) {
+                grid-area: addon;
+            }
 
-        > :has(#add-on) {
-            grid-area: addon;
-        }
+            > :has(#street) {
+                grid-area: street;
+            }
 
-        > :has(#street) {
-            grid-area: street;
-        }
+            > :has(#city) {
+                grid-area: city;
+            }
 
-        > :has(#city) {
-            grid-area: city;
-        }
+            > :has(#phone) {
+                margin-top: 1rem;
+                grid-area: phone;
+            }
 
-        > :has(#phone) {
-            grid-area: phone;
-        }
-
-        > :has(#email) {
-            grid-area: email;
+            > :has(#email) {
+                grid-area: email;
+            }
         }
     }
 }
@@ -346,4 +358,18 @@ fieldset:has(> .radio-buttons > [id="radio-domestic-or-abroad-error"]) {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+/* Styling van resultaten */
+
+dl {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: .5rem;
+    width: 80%;
+}
+
+dd {
+    margin: 0;
 }
