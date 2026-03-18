@@ -71,3 +71,29 @@ Morgen wil ik het tweede pattern afhebben en de javascript en CSS validatie hele
 
 ## Dinsdag 17-3-2026
 Vandaag heb ik de style aangepast zodat het meer op de NS style lijkt. Verder heb ik er voor gezorgd dat alle validatie ook door screenreaders wordt opgepakt. Verder heb ik nog andere dingen afgerond, zoals het laten zien van de data en het verzenden van het formulier.
+
+## Reflectie
+Allereerst vond ik dit vak ontzettend interessant, hierbij met name het toegankelijkheid maken van een website en welke extra features html elementen hebben.
+
+Ik merkte tijdens het maken dat ik het lastig vond om de NS style aan te houden. Dit kan ik de volgende keer beter doen door rustig te beginnen met het maken van componenten en meer onderzoek te doen naar de style. 
+
+Ik vond het ook erg lastig om ervoor te zorgen dat mijn website toegankelijk was zonder javascript.
+
+Verder heb ik geleerd hoe ik moet valideren met JavaScript en hoe ik de validatie berichten ook toegankelijk maak. 
+
+Wat ik de volgende keer anders zou doen is:
+    - Meer diepgaand onderzoeken van patterns, zodat ik gelijk een goede manier kies.
+    - Meer onderzoek doen naar de componenten van het gegeven design system, hierdoor zijn de componenten gelijk goed.
+    - Meer informatie toevoegen aan het begin van een formulier, zodat de context voor de gebruiker ook duidelijk is.
+
+## Bronnen
+ChatGPT 
+    - https://chatgpt.com/s/t_69b950900b30819183d9c53b78e0cf6c
+    - https://chatgpt.com/s/t_69b950900b30819183d9c53b78e0cf6c
+    - https://chatgpt.com/s/t_69b9bec15edc81919014aeb130fe73b9 
+
+Pattern voor Datepicker ->  https://www.sitepoint.com/community/t/validate-date-without-datepicker/385772/2
+
+Voor het printen van resultaten -> https://stackoverflow.com/a/19885871
+
+Custom select -> https://utilitybend.com/blog/the-customizable-select-part-one-history-trickery-and-styling-the-select-with-css
