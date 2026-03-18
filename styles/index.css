@@ -215,6 +215,7 @@ fieldset.question-set {
     }
 }
 
+button,
 .navigation-link {
     display: inline-block;
     line-height: 1.2rem;
